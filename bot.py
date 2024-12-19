@@ -18,7 +18,7 @@ def is_admin(user_id: int) -> bool:
     return user_id in ADMIN_IDS
 
 def get_db():
-    return sqlite3.connect('/data')
+    return sqlite3.connect('/data/database.db')
     
 # Инициализация базы данных
 def init_database():

@@ -1,44 +1,35 @@
 import os
 import logging
-
+import shlex
 from dotenv import load_dotenv
+
 from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes
-import sqlite3
+from telegram.ext import Application, CommandHandler, ChatMemberHandler, ContextTypes
+from motor.motor_asyncio import AsyncIOMotorClient
+from datetime import datetime
 
 # Настройки бота
-CHANNEL_USERNAME = '@tennis_bolshe'
-ADMIN_IDS = [102395366]  # Список ID администраторов
+load_dotenv(dotenv_path='.env.local')
 
 # Настройка логирования
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+TOKEN = os.environ.get('TELEGRAM_TOKEN')
+CHANNEL_USERNAME = os.environ.get('CHANNEL_USERNAME')
+MONGODB_URI = os.environ.get('MONGODB_URL')
+ADMIN_IDS = [int(id) for id in os.environ.get('ADMIN_IDS', '').split(',')]
+
+# Подключение к MongoDB
+client = AsyncIOMotorClient(MONGODB_URI)
+db = client.lottery_db
+
 def is_admin(user_id: int) -> bool:
     return user_id in ADMIN_IDS
 
-def get_db():
-    return sqlite3.connect('/data/database.db')
-    
-# Инициализация базы данных
-def init_database():
-    conn = get_db()
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS participants (
-            ticket_number TEXT PRIMARY KEY,
-            user_id INTEGER NULL,  # Может быть NULL для оффлайн участников
-            username TEXT NULL,    # Может быть NULL для оффлайн участников
-            full_name TEXT NULL,   # Имя для оффлайн участников
-            phone TEXT NULL,       # Телефон для оффлайн участников
-            is_subscribed BOOLEAN,
-            is_winner BOOLEAN DEFAULT FALSE)
-    ''')
-    conn.commit()
-    conn.close()
-
 # Проверка подписки пользователя
 async def check_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    
     user_id = update.effective_user.id
     try:
         member = await context.bot.get_chat_member(CHANNEL_USERNAME, user_id)
@@ -48,9 +39,8 @@ async def check_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE)
         return False
 
 def generate_registration_link(ticket_number):
-    bot_username = 'your_bot_username'  # Замените на username вашего бота
-    deep_link = f'https://t.me/{bot_username}?start=register_{ticket_number}'
-    return deep_link
+    bot_username = os.environ.get('BOT_USERNAME')
+    return f'https://t.me/{bot_username}?start=register_{ticket_number}'
 
 # Команда старта с поддержкой deep linking
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -70,152 +60,196 @@ async def register(update: Update, context: ContextTypes.DEFAULT_TYPE, ticket_nu
 
     user_id = update.effective_user.id
     username = update.effective_user.username
+    user_fullname = update.effective_user.full_name
 
+    # Проверка существующей регистрации
+    existing_ticket = await db.participants.find_one({'ticket_number': ticket_number})
+    if existing_ticket:
+        await update.message.reply_text("Этот билет уже зарегистрирован.")
+        return
     # Проверка подписки
     is_subscribed = await check_subscription(update, context)
-    if not is_subscribed:
-        await update.message.reply_text(f"Для участия необходимо подписаться на канал {CHANNEL_USERNAME}")
-        return
-
-    # Сохранение в базу данных
-    conn = get_db()
-    cursor = conn.cursor()
-    try:
-        cursor.execute('''
-            INSERT OR REPLACE INTO participants 
-            (ticket_number, user_id, username, is_subscribed) 
-            VALUES (?, ?, ?, ?)
-        ''', (ticket_number, user_id, username, True))
-        conn.commit()
+    
+    if is_subscribed:
+        # Регистрируем участника
+        await db.participants.insert_one({
+            'ticket_number': ticket_number,
+            'user_id': user_id,
+            'username': username,
+            'user_fullname': user_fullname,
+            'is_subscribed': True,
+            'registered_at': datetime.utcnow(),
+            'is_winner': False
+        })
         await update.message.reply_text(f"Вы зарегистрированы с билетом {ticket_number}!")
-    except sqlite3.IntegrityError:
-        await update.message.reply_text("Этот билет уже зарегистрирован.")
-    finally:
-        conn.close()
+    else:
+        # Сохраняем в ожидающие
+        await db.pending_registrations.insert_one({
+            'user_id': user_id,
+            'ticket_number': ticket_number,
+            'created_at': datetime.utcnow(),
+            'is_processed': False
+        })
+        await update.message.reply_text(
+            f"Для завершения регистрации билета {ticket_number} "
+            f"подпишитесь на канал {CHANNEL_USERNAME}"
+        )
 
-
-# Команда регистрации оффлайн участника (только для админов)
+# Регистрация оффлайн участника
 async def register_offline(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not is_admin(update.effective_user.id):
         await update.message.reply_text("У вас нет прав для регистрации участников")
         return
 
-    # Проверка формата команды
-    # Пример: /register_offline НОМЕР_БИЛЕТА "Иван Иванов" +79001234567
-    if len(context.args) < 3:
+    # Получаем текст сообщения
+    message_text = update.message.text
+    
+    # Убираем команду из начала сообщения
+    command_parts = message_text.split(maxsplit=1)
+    if len(command_parts) < 2:
         await update.message.reply_text("Используйте: /register_offline НОМЕР_БИЛЕТА \"ИМЯ\" ТЕЛЕФОН")
         return
-
-    ticket_number = context.args[0]
-    full_name = context.args[1]
-    phone = context.args[2]
-
-    conn = get_db()
-    cursor = conn.cursor()
+    
+    # Разбираем аргументы с учетом кавычек
     try:
-        cursor.execute('''
-            INSERT INTO participants 
-            (ticket_number, full_name, phone, is_subscribed) 
-            VALUES (?, ?, ?, ?)
-        ''', (ticket_number, full_name, phone, True))
-        conn.commit()
-        await update.message.reply_text(
-            f"Зарегистрирован оффлайн участник:\n"
-            f"Билет: {ticket_number}\n"
-            f"Имя: {full_name}\n"
-            f"Телефон: {phone}"
-        )
-    except sqlite3.IntegrityError:
+        args = shlex.split(command_parts[1])
+        if len(args) < 3:
+            await update.message.reply_text("Используйте: /register_offline НОМЕР_БИЛЕТА \"ИМЯ\" ТЕЛЕФОН")
+            return
+        
+        ticket_number = args[0]
+        full_name = args[1]  # Теперь имя в кавычках будет одним элементом
+        phone = args[2]
+        
+        
+    except ValueError as e:
+        await update.message.reply_text("Ошибка в формате команды. Проверьте кавычки.")
+        return
+    
+    # Проверка существующей регистрации
+    existing_ticket = await db.participants.find_one({'ticket_number': ticket_number})
+    if existing_ticket:
         await update.message.reply_text("Этот билет уже зарегистрирован.")
-    finally:
-        conn.close()
+        return
 
+    # Регистрация оффлайн участника
+    await db.participants.insert_one({
+        'ticket_number': ticket_number,
+        'full_name': full_name,
+        'phone': phone,
+        'is_subscribed': True,
+        'registered_at': datetime.utcnow(),
+        'is_winner': False,
+        'is_offline': True
+    })
 
-# Команда регистрации выигрышного билета (только для админов)
+    await update.message.reply_text(
+        f"Зарегистрирован оффлайн участник:\n"
+        f"Билет: {ticket_number}\n"
+        f"Имя: {full_name}\n"
+        f"Телефон: {phone}"
+    )
+
+# Обработчик подписки на канал
+async def track_channel_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    result = update.chat_member
+    if not result:
+        return
+        
+    if result.new_chat_member.status == 'member':
+        user_id = result.new_chat_member.user.id
+        username = result.new_chat_member.user.username
+        user_fullname = result.new_chat_member.user.full_name
+        
+        # Поиск ожидающей регистрации
+        pending = await db.pending_registrations.find_one({
+            'user_id': user_id,
+            'is_processed': False
+        })
+        
+        if pending:
+            ticket_number = pending['ticket_number']
+            
+            # Регистрируем участника
+            await db.participants.insert_one({
+                'ticket_number': ticket_number,
+                'user_id': user_id,
+                'username': username,
+                'is_subscribed': True,
+                'registered_at': datetime.utcnow(),
+                'is_winner': False
+            })
+            
+            # Отмечаем регистрацию как обработанную
+            await db.pending_registrations.update_one(
+                {'_id': pending['_id']},
+                {'$set': {'is_processed': True}}
+            )
+            
+            # Отправляем уведомление
+            await context.bot.send_message(
+                chat_id=user_id,
+                text=f"🎉 Спасибо за подписку! Ваш билет {ticket_number} успешно зарегистрирован."
+            )
+
+# Регистрация победителя
 async def register_winner(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not is_admin(update.effective_user.id):
         await update.message.reply_text("У вас нет прав для регистрации победителей")
         return
 
-    if len(context.args) != 1:
-        await update.message.reply_text("Используйте: /register_winner НОМЕР_БИЛЕТА")
+    if len(context.args) != 2:
+        await update.message.reply_text("Используйте: /register_winner НОМЕР_БИЛЕТА НАЗВАНИЕ_ВЫИГРЫША")
         return
 
     ticket_number = context.args[0]
-    conn = get_db()
-    cursor = conn.cursor()
+    prize = context.args[1]
+
+    # Поиск участника
+    participant = await db.participants.find_one({'ticket_number': ticket_number})
     
-    try:
-        # Проверяем существование билета
-        cursor.execute('SELECT * FROM participants WHERE ticket_number = ?', (ticket_number,))
-        participant = cursor.fetchone()
-        
-        if not participant:
-            await update.message.reply_text("Билет не найден в базе данных")
-            return
+    if not participant:
+        await update.message.reply_text("Билет не найден в базе данных")
+        return
 
-        # Отмечаем билет как выигрышный
-        cursor.execute('''
-            UPDATE participants 
-            SET is_winner = TRUE 
-            WHERE ticket_number = ?
-        ''', (ticket_number,))
-        conn.commit()
+    # Отмечаем билет как выигрышный
+    await db.participants.update_one(
+        {'ticket_number': ticket_number},
+        {'$set': {'is_winner': True, 'prize': prize, 'won_at': datetime.utcnow()}}
+    )
 
-        # Получаем информацию о победителе
-        cursor.execute('''
-            SELECT user_id, username, full_name, phone 
-            FROM participants 
-            WHERE ticket_number = ?
-        ''', (ticket_number,))
-        winner = cursor.fetchone()
-        
-        # Формируем сообщение о победителе
-        if winner[0]:  # Если есть user_id (онлайн участник)
-            winner_info = f"@{winner[1]}"
-            # Отправляем личное сообщение победителю
-            try:
-                await context.bot.send_message(
-                    chat_id=winner[0],
-                    text=f"🎉 Поздравляем! Ваш билет {ticket_number} выиграл в лотерее!"
-                )
-            except Exception as e:
-                logger.error(f"Ошибка отправки сообщения победителю: {e}")
-        else:  # Оффлайн участник
-            winner_info = f"{winner[2]} (тел: {winner[3]})"
+    # Формируем информацию о победителе
+    if 'user_id' in participant:  # Онлайн участник
+        winner_info = f"@{participant['username']} ({participant['user_fullname']})"
+        try:
+            await context.bot.send_message(
+                chat_id=participant['user_id'],
+                text=f"🎉 Поздравляем! Ваш билет {ticket_number} выиграл {prize} в лотерее!"
+            )
+        except Exception as e:
+            logger.error(f"Ошибка отправки сообщения победителю: {e}")
+    else:  # Оффлайн участник
+        winner_info = f"{participant['full_name']} (тел: {participant['phone']})"
 
-        await update.message.reply_text(
-            f"Билет {ticket_number} зарегистрирован как выигрышный!\n"
-            f"Победитель: {winner_info}"
-        )
+    await update.message.reply_text(
+        f"Билет {ticket_number} зарегистрирован как выигрышный!\n"
+        f"Победитель: {winner_info}\n"
+        f"Приз: {prize}"
+    )
 
-        # Публикация в канале
-        await context.bot.send_message(
-            chat_id=CHANNEL_USERNAME,
-            text=f"🏆 Поздравляем победителя!\nБилет: {ticket_number}"
-        )
+    # Публикация в канале
+    #await context.bot.send_message(
+    #    chat_id=CHANNEL_USERNAME,
+    #    text=f"🏆 Поздравляем победителя!\nБилет: {ticket_number}"
+    #)
 
-    except Exception as e:
-        await update.message.reply_text(f"Произошла ошибка: {str(e)}")
-    finally:
-        conn.close()
-
-
-# Просмотр списка победителей (только для админов)
+# Просмотр списка победителей
 async def list_winners(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not is_admin(update.effective_user.id):
         await update.message.reply_text("У вас нет прав для просмотра списка победителей")
         return
 
-    conn = get_db()
-    cursor = conn.cursor()
-    
-    cursor.execute('''
-        SELECT ticket_number, username, full_name, phone 
-        FROM participants 
-        WHERE is_winner = TRUE
-    ''')
-    winners = cursor.fetchall()
+    winners = await db.participants.find({'is_winner': True}).to_list(length=None)
     
     if not winners:
         await update.message.reply_text("Список победителей пуст")
@@ -223,35 +257,28 @@ async def list_winners(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     winners_text = "🏆 Список победителей:\n\n"
     for winner in winners:
-        ticket, username, full_name, phone = winner
-        if username:
-            winner_info = f"@{username}"
+        if 'username' in winner:
+            winner_info = f"@{winner['username']}\n{ winner['user_fullname']}"
         else:
-            winner_info = f"{full_name} (тел: {phone})"
-        winners_text += f"Билет {ticket}: {winner_info}\n"
+            winner_info = f"{winner['full_name']} (тел: {winner['phone']})"
+        winners_text += f"\nПриз:{ winner['prize']}\nБилет {winner['ticket_number']}: {winner_info}\n\n"
 
     await update.message.reply_text(winners_text)
-    conn.close()
-
 
 def main():
-    init_database()
-    load_dotenv()
-
-    token = os.environ["TELEGRAM_BOT_TOKEN"]
+    # Инициализация приложения
+    application = Application.builder().token(TOKEN).build()
     
-    # Init app
-    application = Application.builder().token(token).build()
-    
-    # Register command handlers
+    # Регистрация обработчиков команд
     application.add_handler(CommandHandler("start", start_command))
     application.add_handler(CommandHandler("register", register))
     application.add_handler(CommandHandler("register_offline", register_offline))
     application.add_handler(CommandHandler("register_winner", register_winner))
     application.add_handler(CommandHandler("list_winners", list_winners))
+    application.add_handler(ChatMemberHandler(track_channel_subscription, ChatMemberHandler.CHAT_MEMBER))
     
-    application.run_polling()
-
+    # Запуск бота
+    application.run_polling(allowed_updates=['message', 'chat_member'])
 
 if __name__ == '__main__':
     main()

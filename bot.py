@@ -278,7 +278,7 @@ def main():
     application.add_handler(ChatMemberHandler(track_channel_subscription, ChatMemberHandler.CHAT_MEMBER))
     
     # Запуск бота
-    application.run_polling(allowed_updates=['message', 'chat_member'])
+    # application.run_polling(allowed_updates=['message', 'chat_member'])
 
 if __name__ == '__main__':
     main()

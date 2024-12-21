@@ -1,802 +1,802 @@
 [
     {
-        "_id": "3f77956a1f0e2710efd7b595af23463d",
+        "_id": "alisa",
         "description": "Алиса"
     },
     {
-        "_id": "6f34cb24194b7dc5db8f8face6d58c71",
+        "_id": "cheshirskijkot",
         "description": "Чеширский Кот"
     },
     {
-        "_id": "be6e715d3dbe16651b7e1acddd5e0f7b",
+        "_id": "vinnipuh",
         "description": "Винни-Пух"
     },
     {
-        "_id": "32993a439b360a0ba50816cce5d77387",
+        "_id": "pjatachok",
         "description": "Пятачок"
     },
     {
-        "_id": "df2ca81e589e9b5cd10ccb95d03d0415",
+        "_id": "oslikia",
         "description": "Ослик Иа"
     },
     {
-        "_id": "55b9c5d5aeabec9613c64db998d7511e",
+        "_id": "piterpen",
         "description": "Питер Пэн"
     },
     {
-        "_id": "18c983a3afdc644655773cbe3c8f1702",
+        "_id": "karlson",
         "description": "Карлсон"
     },
     {
-        "_id": "c2f9a896b1279cfd4866855725010d18",
+        "_id": "malysh",
         "description": "Малыш"
     },
     {
-        "_id": "bbb7e098a5990169cf8fc0d4e5df215c",
+        "_id": "paddington",
         "description": "Паддингтон"
     },
     {
-        "_id": "e7cb058dcdab3ee521c8ebc3687bfce8",
+        "_id": "peppi",
         "description": "Пеппи"
     },
     {
-        "_id": "714c8b1cb49ec91105830e97448659b5",
+        "_id": "mumitroll",
         "description": "Муми-тролль"
     },
     {
-        "_id": "bd64ac772c917781f53de2604c2c335e",
+        "_id": "snusmumrik",
         "description": "Снусмумрик"
     },
     {
-        "_id": "9ed41b5252e0ae321e01eb04093c1373",
+        "_id": "buratino",
         "description": "Буратино"
     },
     {
-        "_id": "7667834d18e35e02b64bf31c0b1d27b2",
+        "_id": "malvina",
         "description": "Мальвина"
     },
     {
-        "_id": "e34f862f09ad0b5b1cb152b587d260bd",
+        "_id": "pero",
         "description": "Пьеро"
     },
     {
-        "_id": "b17a278e7c563b5ff2148c722f3c7b74",
+        "_id": "artemon",
         "description": "Артемон"
     },
     {
-        "_id": "ee9e6bbd1c95d50487cc71ac2e863544",
+        "_id": "duremar",
         "description": "Дуремар"
     },
     {
-        "_id": "ddcf7397c65e9edc05410cfcd3b881b8",
+        "_id": "papakarlo",
         "description": "Папа Карло"
     },
     {
-        "_id": "d5e1ca91d5aba8b823caeede8109b4e5",
+        "_id": "lisaalisa",
         "description": "Лиса Алиса"
     },
     {
-        "_id": "3ee59de1fc2c11c217db4ea4e1dcbf08",
+        "_id": "kotbazilio",
         "description": "Кот Базилио"
     },
     {
-        "_id": "81d555038fb826d8ce583ff03a793f8c",
+        "_id": "karabasbarabas",
         "description": "Карабас-Барабас"
     },
     {
-        "_id": "3ad2369ad5ada461f9f8d95e9e8e3b4c",
+        "_id": "neznajka",
         "description": "Незнайка"
     },
     {
-        "_id": "d6995932d2549b1616af9fa455b0ea02",
+        "_id": "vintik",
         "description": "Винтик"
     },
     {
-        "_id": "1f4313a53a0548ee8f66a800a9efde97",
+        "_id": "shpuntik",
         "description": "Шпунтик"
     },
     {
-        "_id": "ae3cdf309691f5720ee214d561510c51",
+        "_id": "piljulkin",
         "description": "Пилюлькин"
     },
     {
-        "_id": "0af94f22056385d5a7edeaf921f0411f",
+        "_id": "znajka",
         "description": "Знайка"
     },
     {
-        "_id": "ef94de477cd057557704b799ad4dd54e",
+        "_id": "djadjafedor",
         "description": "Дядя Фёдор"
     },
     {
-        "_id": "943b9751f0d4a0ee12cb954a873d6bfc",
+        "_id": "pechkin",
         "description": "Печкин"
     },
     {
-        "_id": "c0acfc6d8544e3e020df1bb06d99b677",
+        "_id": "kotmatroskin",
         "description": "Кот Матроскин"
     },
     {
-        "_id": "3898b341a71d889e6ed9620b1d383394",
+        "_id": "ivantsarevich",
         "description": "Иван-царевич"
     },
     {
-        "_id": "47bfd449f3e1e3b1d1efed1267904ba0",
+        "_id": "vasilisapremudraja",
         "description": "Василиса Премудрая"
     },
     {
-        "_id": "639d863eb4ee667a65ccdcf818f73507",
+        "_id": "djujmovochka",
         "description": "Дюймовочка"
     },
     {
-        "_id": "86df54806a161da921a97da2c7a1cf70",
+        "_id": "krasnajashapochka",
         "description": "Красная Шапочка"
     },
     {
-        "_id": "c2d59991d56303ea11c8e408f53fc2f3",
+        "_id": "seryjvolk",
         "description": "Серый Волк"
     },
     {
-        "_id": "82d855b892df842d6a9df819fbd0990d",
+        "_id": "zolushka",
         "description": "Золушка"
     },
     {
-        "_id": "1f07478a5e7f8e0e6d15aaf638cd5a04",
+        "_id": "gnom7",
         "description": "Гном №7"
     },
     {
-        "_id": "85ba2f5ded1948fbafe611a04aa9deb1",
+        "_id": "gnom6",
         "description": "Гном №6"
     },
     {
-        "_id": "b4ec5123395806064befe12f85c69d60",
+        "_id": "gnom5",
         "description": "Гном №5"
     },
     {
-        "_id": "dfb378a5609212031492dc6c3ddbad5d",
+        "_id": "gnom4",
         "description": "Гном №4"
     },
     {
-        "_id": "2bcfe302e538fe1dab4dd14849b6be53",
+        "_id": "gnom3",
         "description": "Гном №3"
     },
     {
-        "_id": "bbee9ae92047f2f042507a4c9ba8c68d",
+        "_id": "gnom2",
         "description": "Гном №2"
     },
     {
-        "_id": "ce33024cfcaaa48e48dccb4a82f77eba",
+        "_id": "gnom1",
         "description": "Гном №1"
     },
     {
-        "_id": "be1e6466e1aecebc5cf37c79d9a1518c",
+        "_id": "spjaschajakrasavitsa",
         "description": "Спящая красавица"
     },
     {
-        "_id": "31316633a16826f04861bd4846700195",
+        "_id": "kozlenok7",
         "description": "Козлёнок №7"
     },
     {
-        "_id": "fb5a815d53abdfb2a16aa356f5591ea8",
+        "_id": "kozlenok6",
         "description": "Козлёнок №6"
     },
     {
-        "_id": "ecd49f77b7d1bc208eba4c53e236f47c",
+        "_id": "kozlenok5",
         "description": "Козлёнок №5"
     },
     {
-        "_id": "aa9aabff71223b94b99b0c3cf1f225ca",
+        "_id": "kozlenok4",
         "description": "Козлёнок №4"
     },
     {
-        "_id": "d18b4097d34464f0a6d8491827299277",
+        "_id": "kozlenok3",
         "description": "Козлёнок №3"
     },
     {
-        "_id": "a84feb029bd512c0c9f3bba6aa7c75fa",
+        "_id": "kozlenok2",
         "description": "Козлёнок №2"
     },
     {
-        "_id": "c491540c80f217c7508d3b1c45c1422a",
+        "_id": "kozlenok1",
         "description": "Козлёнок №1"
     },
     {
-        "_id": "582f707e03b8c48f9ad0b86f2ae97719",
+        "_id": "garripotter",
         "description": "Гарри Поттер"
     },
     {
-        "_id": "4f3fe46c1a048b396a4537821b9e04cf",
+        "_id": "germionagrejndzher",
         "description": "Гермиона Грейнджер"
     },
     {
-        "_id": "a084f55dc83dc37e22a0a14c15e1866c",
+        "_id": "ronuizli",
         "description": "Рон Уизли"
     },
     {
-        "_id": "9d374013daac1adba7ed9b6d997f5271",
+        "_id": "dambldor",
         "description": "Дамблдор"
     },
     {
-        "_id": "e841b72b7c5ac26f1da7f9ccb7ef8d44",
+        "_id": "hagrid",
         "description": "Хагрид"
     },
     {
-        "_id": "d7bd19846be07384ea1838f0c360d5b4",
+        "_id": "malenkijprints",
         "description": "Маленький Принц"
     },
     {
-        "_id": "d30166dd94eb628d9eb193192451fea8",
+        "_id": "robingud",
         "description": "Робин Гуд"
     },
     {
-        "_id": "efdddac2a2a0670878cdd9be03dbae62",
+        "_id": "emelja",
         "description": "Емеля"
     },
     {
-        "_id": "1810a5e3ff032075d38aaa834002b8cf",
+        "_id": "asteriks",
         "description": "Астерикс"
     },
     {
-        "_id": "f7f06c7de9c9f9eefbc038103e67a64d",
+        "_id": "obeliks",
         "description": "Обеликс"
     },
     {
-        "_id": "8c1108b988491e094ae91e6ba25753b6",
+        "_id": "tintin",
         "description": "Тинтин"
     },
     {
-        "_id": "832c1abfe720d5a0728d41091e2387c7",
+        "_id": "gulliver",
         "description": "Гулливер"
     },
     {
-        "_id": "cded33e93dfab0bc045e5ad0f4e6a499",
+        "_id": "zharptitsa",
         "description": "Жар-птица"
     },
     {
-        "_id": "efa655e7b82837b0b7dc4432519c30e6",
+        "_id": "belosnezhka",
         "description": "Белоснежка"
     },
     {
-        "_id": "8e76491cde9c766c23e1f67571b6ac76",
+        "_id": "babajaga",
         "description": "Баба-яга"
     },
     {
-        "_id": "2d0745534d430eb41ccf12efc1cee0c9",
+        "_id": "kolobok",
         "description": "Колобок"
     },
     {
-        "_id": "c1145088571060f6d856bb3810721a37",
+        "_id": "malchikspalchik",
         "description": "Мальчик-с-пальчик"
     },
     {
-        "_id": "0fabccad2e05161c9cf7f01f94cb8af2",
+        "_id": "rusalochka",
         "description": "Русалочка"
     },
     {
-        "_id": "6b4761741f81e18197020551f7d8d32f",
+        "_id": "olelukoje",
         "description": "Оле-Лукойе"
     },
     {
-        "_id": "e00cb4a4e5ca49045b7a639119ec5164",
+        "_id": "repka",
         "description": "Репка"
     },
     {
-        "_id": "5060fec4d413b5539a5820d7dbbe3710",
+        "_id": "findus",
         "description": "Финдус"
     },
     {
-        "_id": "3f43c8e05770e13b39b25b03e19b8a9a",
+        "_id": "petson",
         "description": "Петсон"
     },
     {
-        "_id": "38148324417d0b93daf11be395b3b25d",
+        "_id": "chipollino",
         "description": "Чиполлино"
     },
     {
-        "_id": "f34fba87fee77d5fc8f4666bc5776df7",
+        "_id": "sinorpomidor",
         "description": "Синьор Помидор"
     },
     {
-        "_id": "e96b1809cf60f1d09a7282cfe0092db0",
+        "_id": "schelkunchik",
         "description": "Щелкунчик"
     },
     {
-        "_id": "39f7714b02534d0cb43d711faa655405",
+        "_id": "myshkanorushka",
         "description": "Мышка-норушка"
     },
     {
-        "_id": "f8fa896069dbdb50b9ba648cc44f7d06",
+        "_id": "mjauli",
         "description": "Мяули"
     },
     {
-        "_id": "8899ba4d36e17d56bc603f227f062ed2",
+        "_id": "tsarevnaljagushka",
         "description": "Царевна-лягушка"
     },
     {
-        "_id": "485c33ba3f3840d8ed158bd20642d0fa",
+        "_id": "gadkijutenok",
         "description": "Гадкий утёнок"
     },
     {
-        "_id": "5e5025a7b0ca7569cd9f04cd9292c7b7",
+        "_id": "barmalej",
         "description": "Бармалей"
     },
     {
-        "_id": "7f2c14866eb0f9c57ab991d31b67eb72",
+        "_id": "muhatsokotuha",
         "description": "Муха-Цокотуха"
     },
     {
-        "_id": "bc465fa94cf0ba10e10e78c13183a896",
+        "_id": "ajbolit",
         "description": "Айболит"
     },
     {
-        "_id": "5d2eb9f734db387c6a5cc4767e15cce6",
+        "_id": "krokodilgena",
         "description": "Крокодил Гена"
     },
     {
-        "_id": "eb0f644c9fc54711cd234b8095bd5442",
+        "_id": "cheburashka",
         "description": "Чебурашка"
     },
     {
-        "_id": "66a4989b1c785160fd842e6692527dbd",
+        "_id": "shaltajboltaj",
         "description": "Шалтай-Болтай"
     },
     {
-        "_id": "d085722b54acbd0c2ef0f997823076aa",
+        "_id": "tomsojer",
         "description": "Том Сойер"
     },
     {
-        "_id": "5627698ba429730612809459dd606d19",
+        "_id": "hobbit",
         "description": "Хоббит"
     },
     {
-        "_id": "0cfe7f94b5ea9c2b4d59dc2ba666abe8",
+        "_id": "totoshka",
         "description": "Тотошка"
     },
     {
-        "_id": "820799557a083d771928fe00929ab2b1",
+        "_id": "zheleznyjdrovosek",
         "description": "Железный Дровосек"
     },
     {
-        "_id": "873bd578e9447d4e9d1cf9a3e3b9ecd8",
+        "_id": "strashila",
         "description": "Страшила"
     },
     {
-        "_id": "ba29cc721cec67542a98412069ff0883",
+        "_id": "elli",
         "description": "Элли"
     },
     {
-        "_id": "944879fd23a4e932dc51ce574235ff08",
+        "_id": "iljamuromets",
         "description": "Илья Муромец"
     },
     {
-        "_id": "a8c934f70026ff74cc3754b2773f6050",
+        "_id": "dobrynjanikitich",
         "description": "Добрыня Никитич"
     },
     {
-        "_id": "f27f1fddd02f1944270b3bb0b6c6a974",
+        "_id": "leshij",
         "description": "Леший"
     },
     {
-        "_id": "de6aa674287ad903d5db83d083a652d6",
+        "_id": "maugli",
         "description": "Маугли"
     },
     {
-        "_id": "081987973ecdf09ce961ddeae0658bad",
+        "_id": "bagira",
         "description": "Багира"
     },
     {
-        "_id": "d4dc1678646908a0eb2b886755bdd25a",
+        "_id": "medvedbalu",
         "description": "Медведь Балу"
     },
     {
-        "_id": "d5351098f4e1305668e278363fc6ad82",
+        "_id": "cherepahatortila",
         "description": "Черепаха Тортила"
     },
     {
-        "_id": "4054134464ca797984004220651c400e",
+        "_id": "gruffalo",
         "description": "Груффало"
     },
     {
-        "_id": "dc4ffc9fd4005c1a613e4f01f8dec4b1",
+        "_id": "umnajasobachkasonja",
         "description": "Умная собачка Соня"
     },
     {
-        "_id": "a0744a96386ab6d6317808471900dbf8",
+        "_id": "deniskakorablev",
         "description": "Дениска Кораблёв"
     },
     {
-        "_id": "8814b5e8008b5bd7b8786b8c1eadf2eb",
+        "_id": "kaj",
         "description": "Кай"
     },
     {
-        "_id": "46023054ac24693aff70dfff4d9634ec",
+        "_id": "gerda",
         "description": "Герда"
     },
     {
-        "_id": "2ab9a6ca58a600c9d7c6c564e26d4e17",
+        "_id": "kurochkaluiza",
         "description": "Курочка Луиза"
     },
     {
-        "_id": "214c3d20e07037e80853f4a6d94d826d",
+        "_id": "pinokkio",
         "description": "Пиноккио"
     },
     {
-        "_id": "31447bbbc9ec0b756eb3c51d9f87b973",
+        "_id": "malyshnikolja",
         "description": "Малыш Николя"
     },
     {
-        "_id": "ab0e80c996b50f327d315723bca1db61",
+        "_id": "baronmjunhauzen",
         "description": "Барон Мюнхаузен"
     },
     {
-        "_id": "eafc31811e453032c4e5cc8b4eaa2ccc",
+        "_id": "kapitanvrungel",
         "description": "Капитан Врунгель"
     },
     {
-        "_id": "bfd98884fd86d6b53dbf845ead90cb0a",
+        "_id": "bratetskrolik",
         "description": "Братец Кролик"
     },
     {
-        "_id": "ecf883f4ac6c16e2e5a1380a48d775ca",
+        "_id": "bratetslis",
         "description": "Братец Лис"
     },
     {
-        "_id": "cbbe027ec18f933a534f8a8e7d7097e3",
+        "_id": "djadjastepa",
         "description": "Дядя Стёпа"
     },
     {
-        "_id": "0fc8b70ffd16872a2ca3bc37475c08df",
+        "_id": "ezhikimedvezhonok",
         "description": "Ежик и Медвежонок"
     },
     {
-        "_id": "7f9220716d3dca6e4ba134d442626155",
+        "_id": "kotvsapogah",
         "description": "Кот в сапогах"
     },
     {
-        "_id": "182bcb5ebefb1d99261044d2bbef12f2",
+        "_id": "meripoppins",
         "description": "Мэри Поппинс"
     },
     {
-        "_id": "f5478b013a6d95bd4e99db8898e02f1b",
+        "_id": "nils",
         "description": "Нильс"
     },
     {
-        "_id": "f6b1d6fd598ef2698b0e9a1645062a38",
+        "_id": "robinzonkruzo",
         "description": "Робинзон Крузо"
     },
     {
-        "_id": "843d9e8496b9e1c93f3c45fdef6ececd",
+        "_id": "umka",
         "description": "Умка"
     },
     {
-        "_id": "529ae529982e06ccbf6fb9f33587cd53",
+        "_id": "starikhottabych",
         "description": "Старик Хоттабыч"
     },
     {
-        "_id": "e6692169d89bd4c744798d54dd7216da",
+        "_id": "chuk",
         "description": "Чук"
     },
     {
-        "_id": "9d887784174b5258583f8f078d5567fd",
+        "_id": "gek",
         "description": "Гек"
     },
     {
-        "_id": "6c1da11c7fc8b820bf038d734470b7b3",
+        "_id": "emilizlennebergi",
         "description": "Эмиль из Леннеберги"
     },
     {
-        "_id": "5aebb53a8ebfd63d83b3ea37ab7b2882",
+        "_id": "domovenokkuzja",
         "description": "Домовёнок Кузя"
     },
     {
-        "_id": "fe717c644c2702fa5854bd21fde0b7fa",
+        "_id": "nafanja",
         "description": "Нафаня"
     },
     {
-        "_id": "b59e64a3d76df4ac18f04d7b63be006c",
+        "_id": "konekgorbunok",
         "description": "Конёк-Горбунок"
     },
     {
-        "_id": "c0157ab4f59c37f64bdd760f34a46c50",
+        "_id": "kotuchenyj",
         "description": "Кот Учёный"
     },
     {
-        "_id": "8553223fcf01220dbd507c2e7e607fa3",
+        "_id": "tsarsaltan",
         "description": "Царь Салтан"
     },
     {
-        "_id": "a8438e93f34deddc1935a9cbb65f90ba",
+        "_id": "balda",
         "description": "Балда"
     },
     {
-        "_id": "764319ebde7acbe4e31f73ca7c8a0f14",
+        "_id": "zolotajarybka",
         "description": "Золотая рыбка"
     },
     {
-        "_id": "ca66ca9acbbfd93e589c35096acaee99",
+        "_id": "tsarevnalebed",
         "description": "Царевна Лебедь"
     },
     {
-        "_id": "acbeb12edc7ecd6820f77676c4bb0a33",
+        "_id": "mojdodyr",
         "description": "Мойдодыр"
     },
     {
-        "_id": "28795b2bb8c73139161f1e1da158fffb",
+        "_id": "vodjanoj",
         "description": "Водяной"
     },
     {
-        "_id": "6b027bcfde3818347c7978955de4f427",
+        "_id": "zmejgorynych",
         "description": "Змей Горыныч"
     },
     {
-        "_id": "4e5a8f71a1e88e88718ed6bf815b6534",
+        "_id": "karandashisamodelkin",
         "description": "Карандаш и Самоделкин"
     },
     {
-        "_id": "c2c310cda9d05949a2738c7515536818",
+        "_id": "zog",
         "description": "Зог"
     },
     {
-        "_id": "b5bc60d0d2c3f2aac34d898ca1fdb691",
+        "_id": "ulitka",
         "description": "Улитка"
     },
     {
-        "_id": "f33f373fcc478c2b33e76259cc269ab7",
+        "_id": "kit",
         "description": "Кит"
     },
     {
-        "_id": "f1b53a3e921719c7149d483ad7225b8e",
+        "_id": "ljubopytnyjdzhordzh",
         "description": "Любопытный Джордж"
     },
     {
-        "_id": "2ded1df0df728d7cd5b882ea9d94de84",
+        "_id": "rapuntsel",
         "description": "Рапунцель"
     },
     {
-        "_id": "92053fa626913cfc2d6564f34f7738fd",
+        "_id": "alibaba",
         "description": "Али-Баба"
     },
     {
-        "_id": "e3d5d6c02339a0b4db7d3b71f12f05e1",
+        "_id": "sorokrazbojnikov",
         "description": "Сорок разбойников"
     },
     {
-        "_id": "f31ba66a1c4b56a238651a4bcf2e44e1",
+        "_id": "chelovetkin",
         "description": "Человеткин"
     },
     {
-        "_id": "1e31a5f74eac15a2bd47252e44d73cea",
+        "_id": "kurochkarjaba",
         "description": "Курочка Ряба"
     },
     {
-        "_id": "b4f7bf227a0a4b23e1cb0ed7314409c7",
+        "_id": "morozko",
         "description": "Морозко"
     },
     {
-        "_id": "e1c38ffdc64d901b73ee0f7e35bb4bf7",
+        "_id": "mesjatsaprel",
         "description": "Месяц Апрель"
     },
     {
-        "_id": "b0e9b3e051549a341137afc0e6862e98",
+        "_id": "karlhen",
         "description": "Карлхен"
     },
     {
-        "_id": "a80c7ab3ec9b51c8093486d4c641b191",
+        "_id": "malenkijdedmoroz",
         "description": "Маленький Дед Мороз"
     },
     {
-        "_id": "621674aa5a0298f0e9680d3c801cf184",
+        "_id": "barsukot",
         "description": "Барсукот"
     },
     {
-        "_id": "511032bede83b50b296f566081df0f99",
+        "_id": "barsukstarshij",
         "description": "Барсук Старший"
     },
     {
-        "_id": "ff0db6e5140efedf2ee7509df5c76036",
+        "_id": "kotenokshmjak",
         "description": "Котёнок Шмяк"
     },
     {
-        "_id": "4dceab3bcf91ad32ad7df58b9187e97d",
+        "_id": "tonjaglimmerdal",
         "description": "Тоня Глиммердал"
     },
     {
-        "_id": "003d8620b2633cb33de24f8530adce51",
+        "_id": "prostodursen",
         "description": "Простодурсен"
     },
     {
-        "_id": "256be8e67331ada36849b527cb296a0e",
+        "_id": "olovjannyjsoldatik",
         "description": "Оловянный солдатик"
     },
     {
-        "_id": "c616c59d736c42c6eddd2e063d9303ac",
+        "_id": "trille",
         "description": "Трилле"
     },
     {
-        "_id": "6d223471b7636a0a9740cf13a8de279b",
+        "_id": "charli",
         "description": "Чарли"
     },
     {
-        "_id": "6587e7c8da3d6ed63be354831a6843cd",
+        "_id": "frekenbok",
         "description": "Фрекен Бок"
     },
     {
-        "_id": "b07c7697dc775506fdda5e58b85f2d52",
+        "_id": "triporosenka",
         "description": "Три поросёнка"
     },
     {
-        "_id": "df922445cf464c54b3dd1e8bb143941f",
+        "_id": "oljaijalo",
         "description": "Оля и Яло"
     },
     {
-        "_id": "d4d56881c076af9de0fc44ee478629aa",
+        "_id": "alisaselezneva",
         "description": "Алиса Селезнёва"
     },
     {
-        "_id": "4e9dd582b72d77f0c1a0eee4d3854005",
+        "_id": "manjunja",
         "description": "Манюня"
     },
     {
-        "_id": "25671dd0cf01399d6935afa3fb1fc2d9",
+        "_id": "krolikedvard",
         "description": "Кролик Эдвард"
     },
     {
-        "_id": "ece94406acbc0059a3d18aab03f90ca1",
+        "_id": "vitjamaleev",
         "description": "Витя Малеев"
     },
     {
-        "_id": "78792e644e8f077924a910892fac5e08",
+        "_id": "dzhelsomino",
         "description": "Джельсомино"
     },
     {
-        "_id": "623458abd3e9aca6a8bdf3abde01bf2b",
+        "_id": "mio",
         "description": "Мио"
     },
     {
-        "_id": "5afa61c41eb1f876d434fda7689fd022",
+        "_id": "jumjum",
         "description": "Юм-Юм"
     },
     {
-        "_id": "b3496da569f198cc3ef118c5f4d0391b",
+        "_id": "razbojnikizkardamona",
         "description": "Разбойник из Кардамона"
     },
     {
-        "_id": "3123f6d9da4858711030ca0ccfca7eca",
+        "_id": "serebrjanoekopyttse",
         "description": "Серебряное Копытце"
     },
     {
-        "_id": "ef151f7958ee89096c707c6d0b7f5792",
+        "_id": "vasektrubachev",
         "description": "Васёк Трубачёв"
     },
     {
-        "_id": "de09c97433b61db2f74dc97360201737",
+        "_id": "robinbobin",
         "description": "Робин-Бобин"
     },
     {
-        "_id": "b17bf542149c7924b59df2723cea3b20",
+        "_id": "pollianna",
         "description": "Поллианна"
     },
     {
-        "_id": "3b0c042ec62797d94986c2f23927671c",
+        "_id": "elektronik",
         "description": "Электроник"
     },
     {
-        "_id": "d6ab86981a52c23528655275dcfecebb",
+        "_id": "snezhnajakoroleva",
         "description": "Снежная королева"
     },
     {
-        "_id": "2fa37c1b370754226163d02693d64dc6",
+        "_id": "dednadzor",
         "description": "Дед-Надзор"
     },
     {
-        "_id": "5151325b364bfe831237d5f92882c1c6",
+        "_id": "ronidochrazbojnika",
         "description": "Рони - дочь разбойника"
     },
     {
-        "_id": "80f11f2b1c2ccd01b9b7b27a60078178",
+        "_id": "razbojnikhottsenplotts",
         "description": "Разбойник Хотценплотц"
     },
     {
-        "_id": "714cba478825f2b6a2d08131e3734e71",
+        "_id": "mishkabruno",
         "description": "Мишка Бруно"
     },
     {
-        "_id": "b524353760657705d20cbe7864198f8a",
+        "_id": "foksmikki",
         "description": "Фокс Микки"
     },
     {
-        "_id": "3b0b6f7f1c6086d035b595e2efb91ac1",
+        "_id": "malenkijmuk",
         "description": "Маленький Мук"
     },
     {
-        "_id": "b4eb63c956ef2af67623e6a8f98d33d4",
+        "_id": "bobik",
         "description": "Бобик"
     },
     {
-        "_id": "f880656c52effec2bd09316c8b56c4bc",
+        "_id": "barbos",
         "description": "Барбос"
     },
     {
-        "_id": "a99c1309bc92aa0d60e72f32e0fbbde7",
+        "_id": "pespoimenimani",
         "description": "Пёс по имени Мани"
     },
     {
-        "_id": "92fb041715c0016abd94216e211cbf57",
+        "_id": "tsvetiksemitsvetik",
         "description": "Цветик-Семицветик"
     },
     {
-        "_id": "0129c7f9825a54c98a8a55469d35b0c6",
+        "_id": "rybakit",
         "description": "Рыба-Кит"
     },
     {
-        "_id": "3bc85f23502d28ac6b085319cf455a91",
+        "_id": "bogatyr1",
         "description": "Богатырь №1"
     },
     {
-        "_id": "25ff8fb4435b866aa485229d75983673",
+        "_id": "bogatyr2",
         "description": "Богатырь №2"
     },
     {
-        "_id": "d59211bba2b8dd6280b7748901a876bc",
+        "_id": "bogatyr3",
         "description": "Богатырь №3"
     },
     {
-        "_id": "3ed6abf4325ee7ec6352fa7c46232aa7",
+        "_id": "bogatyr4",
         "description": "Богатырь №4"
     },
     {
-        "_id": "a6261435438d94d4a16d539dd2eb0b3a",
+        "_id": "bogatyr5",
         "description": "Богатырь №5"
     },
     {
-        "_id": "4f70e29c39eb1f209020fc5e7fad6aa3",
+        "_id": "bogatyr6",
         "description": "Богатырь №6"
     },
     {
-        "_id": "8d2fb0072446b4edb2f966e63f2c57be",
+        "_id": "bogatyr7",
         "description": "Богатырь №7"
     },
     {
-        "_id": "64a786c4ae2eb1c3b96323ad5b604a4f",
+        "_id": "myshonokteo",
         "description": "Мышонок Тео"
     },
     {
-        "_id": "0e4b7741049bb1112f2702121aa812ba",
+        "_id": "neizvestnyjshvostom",
         "description": "Неизвестный с хвостом"
     },
     {
-        "_id": "72330f5cd958316cbf2e8b961ba0293a",
+        "_id": "kroshechkahavroshechka",
         "description": "Крошечка-Хаврошечка"
     },
     {
-        "_id": "2e43263ca7c9d7ca485b1170a8862bfb",
+        "_id": "bychoksmoljanojbochok",
         "description": "Бычок-смоляной бочок"
     },
     {
-        "_id": "ee0fd37393533ca35070325dfe0372aa",
+        "_id": "guslebed",
         "description": "Гусь-Лебедь"
     },
     {
-        "_id": "e081d20b26c2334da50788adc8ac77f8",
+        "_id": "hozjajkamednojgory",
         "description": "Хозяйка медной горы"
     },
     {
-        "_id": "4a8e5bae4aa8eff76628ebf5894bad12",
+        "_id": "sivkaburka",
         "description": "Сивка-Бурка"
     },
     {
-        "_id": "722a7d7fe673b2f3ed55bd7f50196029",
+        "_id": "lisichkasestrichka",
         "description": "Лисичка-сестричка"
     },
     {
-        "_id": "8fd958f59a3d917198e11608f23a6d5d",
+        "_id": "tsarevnanesmejana",
         "description": "Царевна Несмеяна"
     },
     {
-        "_id": "d6357e6e3ccc6b7ffabe3b3807df37f2",
+        "_id": "alladin",
         "description": "Алладин"
     },
     {
-        "_id": "cbb68f672200837a6c116d7f0861c2e5",
+        "_id": "djadkachernomor",
         "description": "Дядька Черномор"
     }
 ]

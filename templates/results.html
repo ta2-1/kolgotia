@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {font-size: 12pt; font-family: monospace;}
+    .ticket {float: left; padding: 10px; width: 30mm; height: 38mm; border: 1px; border-color: black; border-style: dotted;}
+    .qr {margin: 0 auto;}
+    .title {text-align: center;}
+  </style>
+  <title>Kolgotia lottery tickets</title>
+</head>
+
+<body>
+  {% for ticket in tickets %}
+    <div class="ticket">
+      <div class="qr">{{ ticket.qr }}</div> <div class="title">{{ ticket.description }}</div>
+    </div>
+    {% if loop.index != 0 and loop.index % 30 == 0 %}
+    <div class="separator"></div>
+    {% endif %}
+  {% endfor %}
+</body>
+</html>
